@@ -147,7 +147,7 @@ export default class Presentation extends React.Component {
         <CodeSlide
           transition={[]}
           lang="js"
-          code={require("raw-loader!../assets/codes/let-and-const/1.js.example")}
+          code={require("raw-loader!../assets/codes/let-and-const/trick-question-1.js.example")}
           ranges={[
             { loc: [0, 7], title: "let and const" },
             { loc: [0, 4], title: "Block scope" },
