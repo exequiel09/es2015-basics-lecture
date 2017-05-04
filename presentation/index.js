@@ -29,10 +29,12 @@ require("spectacle/lib/themes/default/index.css");
 
 const images = {
   global: {
-    nuclearExplosion: require("../assets/img/nuclear-explosion.gif")
+    nuclearExplosion: require("../assets/img/nuclear-explosion.gif"),
+    shocked1: require("../assets/img/shocked-1.gif")
   },
   letConst: {
-    explicitBlockedScopedError: require("../assets/img/let-and-const/block-scoped-let-error.png")
+    explicitBlockedScopedError: require("../assets/img/let-and-const/block-scoped-let-error.png"),
+    ifBlockScopedError: require("../assets/img/let-and-const/if-let-error.png")
   }
 };
 
@@ -157,7 +159,7 @@ export default class Presentation extends React.Component {
             { loc: [9, 15], note: "Show the output in the console" }
           ]} />
 
-        <Slide transition={["slide"]} bgImage={images.global.nuclearExplosion.replace("/", "")} bgDarken={0.75}>
+        <Slide transition={["slide"]} bgImage={images.global.nuclearExplosion.replace("/", "")} bgDarken={0.25}>
           <Appear fid="13">
             <Heading size={1} fit lineHeight={1} textColor="primary">
               ReferenceError!
@@ -181,6 +183,18 @@ export default class Presentation extends React.Component {
             { loc: [0, 7], title: "What's the output?" }
           ]} />
 
+        <Slide transition={["slide"]} bgImage={images.global.shocked1.replace("/", "")} bgDarken={0.25}>
+          <Appear fid="15">
+            <Heading size={1} fit lineHeight={1} textColor="primary">
+              ReferenceError!
+            </Heading>
+          </Appear>
+
+          <Appear fid="16">
+            <Image src={images.letConst.ifBlockScopedError.replace("/", "")} margin="30px auto 0" height="300px"/>
+          </Appear>
+        </Slide>
+
         <CodeSlide
           transition={[]}
           lang="js"
@@ -199,13 +213,13 @@ export default class Presentation extends React.Component {
             Best practice?
           </Heading>
 
-          <Appear fid="15">
+          <Appear fid="17">
             <Text textColor="primary" size={6} margin="20px auto 0">
               Use <Code textColor="primary" size={1}>const</Code> always for values to be stored that will not change in the future.
             </Text>
           </Appear>
 
-          <Appear fid="15">
+          <Appear fid="18">
             <Text textColor="primary" size={6} margin="20px auto 0">
               Use <Code textColor="primary" size={1}>let</Code> if you plan to change the value some other time in the future.
             </Text>
