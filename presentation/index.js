@@ -147,6 +147,19 @@ export default class Presentation extends React.Component {
         <CodeSlide
           transition={[]}
           lang="js"
+          textAlign="left"
+          display="block"
+          code={require("raw-loader!../assets/codes/let-and-const/es2015-beyond.js.example")}
+          ranges={[
+            { loc: [0, 17], title: "let and const" },
+            { loc: [0, 3], note: "Define two variables" },
+            { loc: [4, 8], note: "Define function with a constant inside" },
+            { loc: [9, 15], note: "Show the output in the console" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
           code={require("raw-loader!../assets/codes/let-and-const/trick-question-1.js.example")}
           ranges={[
             { loc: [0, 8], title: "let and const" },
