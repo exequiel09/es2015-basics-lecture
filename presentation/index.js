@@ -119,6 +119,8 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
 
+        {/* [let/const] ::start */}
+
         <Slide transition={[]} bgColor="secondary" textColor="primary">
           <Heading size={1} fit lineHeight={1} textColor="primary">
             let and const
@@ -239,6 +241,8 @@ export default class Presentation extends React.Component {
             </Text>
           </Appear>
         </Slide>
+
+        {/* [let/const] ::end */}
 
       </Deck>
     );
