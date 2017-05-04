@@ -139,9 +139,9 @@ export default class Presentation extends React.Component {
           lang="js"
           code={require("raw-loader!../assets/codes/let-and-const/before-es2015.js.example")}
           ranges={[
-            { loc: [0, 7], title: "Before ES2015" },
-            { loc: [0, 3], title: "Define Variables" },
-            { loc: [4, 7], title: "Then we log it" }
+            { loc: [0, 8], title: "Before ES2015" },
+            { loc: [0, 3], note: "Define Variables" },
+            { loc: [4, 7], note: "Then we log it" }
           ]} />
 
         <CodeSlide
@@ -149,10 +149,10 @@ export default class Presentation extends React.Component {
           lang="js"
           code={require("raw-loader!../assets/codes/let-and-const/trick-question-1.js.example")}
           ranges={[
-            { loc: [0, 7], title: "let and const" },
-            { loc: [0, 4], title: "Block scope" },
-            { loc: [1, 3], title: "Define variable using let" },
-            { loc: [5, 7], title: "Then we log it" },
+            { loc: [0, 8], title: "let and const" },
+            { loc: [0, 4], note: "Define explicit block scope" },
+            { loc: [1, 3], note: "Define variable using let" },
+            { loc: [5, 7], note: "Then we log it" },
             { loc: [0, 7], title: "What's the output?" }
           ]} />
 
