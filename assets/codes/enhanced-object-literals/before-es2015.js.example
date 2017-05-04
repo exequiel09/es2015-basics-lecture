@@ -1,0 +1,18 @@
+// declare variables using const
+const name = 'John Doe';
+const suffix_token = 'id123344';
+
+// define object using object literal `{}` with properties and a method
+const obj = {
+  name: name,
+  address: 'Los Baños, Laguna',
+  showInfo: function() {
+    console.log('Name: ' + this.name + ' Address: ' + this.address);
+  }
+};
+
+// computed property name added via array notation
+obj['secret_' + suffix_token] = '12345';
+
+// show the contents of the object
+console.log(obj)

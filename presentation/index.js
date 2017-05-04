@@ -244,6 +244,42 @@ export default class Presentation extends React.Component {
 
         {/* [let/const] ::end */}
 
+        {/* [Enhanced Object Literals] ::start */}
+
+        <Slide transition={[]} bgColor="secondary" textColor="primary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
+            Enhanced Object Literals
+          </Heading>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/enhanced-object-literals/before-es2015.js.example")}
+          ranges={[
+            { loc: [0, 19], title: "Before ES2015" },
+            { loc: [0, 3], note: "Define variables using const" },
+            { loc: [4, 12], note: "Create object using object literals and add some properties and methods" },
+            { loc: [13, 15], note: "Add a computed property to the object using array notation" },
+            { loc: [16, 18], note: "Show the contents of the object" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/enhanced-object-literals/es2015-beyond.js.example")}
+          ranges={[
+            { loc: [0, 22], title: "Enhanced Object Literals" },
+            { loc: [0, 3], note: "Define variables using const" },
+            { loc: [4, 18], note: "Create object using object literals and add some properties and methods" },
+            { loc: [6, 8], note: "Define shorthand property name and value when variable and property name is the same" },
+            { loc: [10, 12], note: "Add a computed property to the object using array notation" },
+            { loc: [13, 17], note: "Define object method using shorthand syntax" },
+            { loc: [19, 21], note: "Show the contents of the object" }
+          ]} />
+
+        {/* [Enhanced Object Literals] ::end */}
+
       </Deck>
     );
   }
