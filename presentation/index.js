@@ -30,11 +30,13 @@ require("spectacle/lib/themes/default/index.css");
 const images = {
   global: {
     nuclearExplosion: require("../assets/img/nuclear-explosion.gif"),
-    shocked1: require("../assets/img/shocked-1.gif")
+    shocked1: require("../assets/img/shocked-1.gif"),
+    frustratedProgrammer: require("../assets/img/frustrated-programmer.gif")
   },
   letConst: {
     explicitBlockedScopedError: require("../assets/img/let-and-const/block-scoped-let-error.png"),
-    ifBlockScopedError: require("../assets/img/let-and-const/if-let-error.png")
+    ifBlockScopedError: require("../assets/img/let-and-const/if-let-error.png"),
+    constError: require("../assets/img/let-and-const/const-error.png")
   }
 };
 
@@ -208,18 +210,30 @@ export default class Presentation extends React.Component {
             { loc: [0, 12], title: "What's the output?" }
           ]} />
 
+        <Slide transition={["slide"]} bgImage={images.global.frustratedProgrammer.replace("/", "")} bgDarken={0.5}>
+          <Appear fid="17">
+            <Heading size={1} fit lineHeight={1} textColor="primary">
+              TypeError!
+            </Heading>
+          </Appear>
+
+          <Appear fid="18">
+            <Image src={images.letConst.constError.replace("/", "")} margin="30px auto 0" height="300px"/>
+          </Appear>
+        </Slide>
+
         <Slide transition={["zoom"]} bgColor="tertiary">
           <Heading size={1} fit lineHeight={1} textColor="primary">
             Best practice?
           </Heading>
 
-          <Appear fid="17">
+          <Appear fid="19">
             <Text textColor="primary" size={6} margin="20px auto 0">
               Use <Code textColor="primary" size={1}>const</Code> always for values to be stored that will not change in the future.
             </Text>
           </Appear>
 
-          <Appear fid="18">
+          <Appear fid="20">
             <Text textColor="primary" size={6} margin="20px auto 0">
               Use <Code textColor="primary" size={1}>let</Code> if you plan to change the value some other time in the future.
             </Text>
