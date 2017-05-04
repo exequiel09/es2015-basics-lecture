@@ -194,6 +194,24 @@ export default class Presentation extends React.Component {
             { loc: [0, 12], title: "What's the output?" }
           ]} />
 
+        <Slide transition={["zoom"]} bgColor="tertiary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
+            Best practice?
+          </Heading>
+
+          <Appear fid="15">
+            <Text textColor="primary" size={6} margin="20px auto 0">
+              Use <Code textColor="primary" size={1}>const</Code> always for values to be stored that will not change in the future.
+            </Text>
+          </Appear>
+
+          <Appear fid="15">
+            <Text textColor="primary" size={6} margin="20px auto 0">
+              Use <Code textColor="primary" size={1}>let</Code> if you plan to change the value some other time in the future.
+            </Text>
+          </Appear>
+        </Slide>
+
       </Deck>
     );
   }
