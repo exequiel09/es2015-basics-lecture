@@ -1,0 +1,7 @@
+{
+  // define let in a explicit block scope
+  let num = 10;
+}
+
+// we log it here.
+console.log(num);

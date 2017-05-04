@@ -1,0 +1,7 @@
+// define let inside an if statement
+if (true) {
+    let another_num = 20;
+}
+
+// we log it here.
+console.log(another_num);
