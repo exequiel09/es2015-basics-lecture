@@ -157,18 +157,6 @@ export default class Presentation extends React.Component {
             { loc: [9, 15], note: "Show the output in the console" }
           ]} />
 
-        <CodeSlide
-          transition={[]}
-          lang="js"
-          code={require("raw-loader!../assets/codes/let-and-const/trick-question-1.js.example")}
-          ranges={[
-            { loc: [0, 8], title: "let and const" },
-            { loc: [0, 4], note: "Define explicit block scope" },
-            { loc: [1, 3], note: "Define variable using let" },
-            { loc: [5, 7], note: "Then we log it" },
-            { loc: [0, 7], title: "What's the output?" }
-          ]} />
-
         <Slide transition={["slide"]} bgImage={images.global.nuclearExplosion.replace("/", "")} bgDarken={0.75}>
           <Appear fid="13">
             <Heading size={1} fit lineHeight={1} textColor="primary">
@@ -180,6 +168,32 @@ export default class Presentation extends React.Component {
             <Image src={images.letConst.explicitBlockedScopedError.replace("/", "")} margin="30px auto 0" height="300px"/>
           </Appear>
         </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/let-and-const/trick-question-2.js.example")}
+          ranges={[
+            { loc: [0, 8], title: "let and const" },
+            { loc: [0, 4], note: "Define variable inside an if statement" },
+            { loc: [2, 3], note: "Define variable using let" },
+            { loc: [5, 7], note: "Then we log it" },
+            { loc: [0, 7], title: "What's the output?" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/let-and-const/trick-question-3.js.example")}
+          ranges={[
+            { loc: [0, 12], title: "let and const" },
+            { loc: [0, 2], note: "Define variable using const" },
+            { loc: [3, 5], note: "Show it to the console" },
+            { loc: [6, 8], note: "Modify the value" },
+            { loc: [9, 11], note: "Show the modified value" },
+            { loc: [0, 12], title: "What's the output?" }
+          ]} />
+
       </Deck>
     );
   }

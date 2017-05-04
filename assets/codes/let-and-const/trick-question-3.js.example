@@ -1,0 +1,11 @@
+// define variable using const
+const user = 'John Doe';
+
+// show it to the console
+console.log(user);
+
+// change the value
+user = 'John Doe II';
+
+// show the modified value to the console
+console.log(user);
