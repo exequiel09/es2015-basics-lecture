@@ -111,9 +111,6 @@ export default class Presentation extends React.Component {
               <ListItem>Default - Rest - Spread</ListItem>
             </Appear>
             <Appear fid="9">
-              <ListItem>Promises</ListItem>
-            </Appear>
-            <Appear fid="10">
               <ListItem>and many more ...</ListItem>
             </Appear>
           </List>
@@ -132,14 +129,14 @@ export default class Presentation extends React.Component {
             let and const
           </Heading>
 
-          <Appear fid="11">
+          <Appear fid="10">
             <Text margin="30px 0 0" textColor="primary" size={1}>
               <Code textColor="primary" size={1}>let</Code> and <Code textColor="primary" size={1}>const</Code>
               are block-scoped variable declaration constructs.
             </Text>
           </Appear>
 
-          <Appear fid="12">
+          <Appear fid="11">
             <Text margin="30px 0 0" textColor="primary" size={1}>
               Block scopes include: if, switch, loops, functions and the explicit block scope <Code textColor="primary" size={1}>{ "{}" }</Code>.
             </Text>
@@ -170,13 +167,13 @@ export default class Presentation extends React.Component {
           ]} />
 
         <Slide transition={["slide"]} bgImage={images.global.nuclearExplosion.replace("/", "")} bgDarken={0.25}>
-          <Appear fid="13">
+          <Appear fid="12">
             <Heading size={1} fit lineHeight={1} textColor="primary">
               ReferenceError!
             </Heading>
           </Appear>
 
-          <Appear fid="14">
+          <Appear fid="13">
             <Image src={images.letConst.explicitBlockedScopedError.replace("/", "")} margin="30px auto 0" height="300px"/>
           </Appear>
         </Slide>
@@ -194,13 +191,13 @@ export default class Presentation extends React.Component {
           ]} />
 
         <Slide transition={["slide"]} bgImage={images.global.shocked1.replace("/", "")} bgDarken={0.25}>
-          <Appear fid="15">
+          <Appear fid="14">
             <Heading size={1} fit lineHeight={1} textColor="primary">
               ReferenceError!
             </Heading>
           </Appear>
 
-          <Appear fid="16">
+          <Appear fid="15">
             <Image src={images.letConst.ifBlockScopedError.replace("/", "")} margin="30px auto 0" height="300px"/>
           </Appear>
         </Slide>
@@ -219,13 +216,13 @@ export default class Presentation extends React.Component {
           ]} />
 
         <Slide transition={["slide"]} bgImage={images.global.frustratedProgrammer.replace("/", "")} bgDarken={0.5}>
-          <Appear fid="17">
+          <Appear fid="16">
             <Heading size={1} fit lineHeight={1} textColor="primary">
               TypeError!
             </Heading>
           </Appear>
 
-          <Appear fid="18">
+          <Appear fid="17">
             <Image src={images.letConst.constError.replace("/", "")} margin="30px auto 0" height="300px"/>
           </Appear>
         </Slide>
@@ -235,13 +232,13 @@ export default class Presentation extends React.Component {
             Best practice?
           </Heading>
 
-          <Appear fid="19">
+          <Appear fid="18">
             <Text textColor="primary" size={6} margin="20px auto 0">
               Use <Code textColor="primary" size={1}>const</Code> always for values to be stored that will not change in the future.
             </Text>
           </Appear>
 
-          <Appear fid="20">
+          <Appear fid="19">
             <Text textColor="primary" size={6} margin="20px auto 0">
               Use <Code textColor="primary" size={1}>let</Code> if you plan to change the value some other time in the future.
             </Text>
@@ -293,7 +290,7 @@ export default class Presentation extends React.Component {
             Arrow Functions and Lexical <Code textColor="primary" textSize="1rem">this</Code>
           </Heading>
 
-          <Appear fid="21">
+          <Appear fid="20">
             <Text margin="30px 0 0" textColor="primary" size={1}>
               Arrows are a function shorthand using the <Code textColor="primary">=></Code> syntax.
               They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript.
@@ -448,13 +445,13 @@ export default class Presentation extends React.Component {
           <Heading size={6} textColor="secondary" caps>When not to use Arrow Functions?</Heading>
 
           <List>
-            <Appear fid="22">
+            <Appear fid="21">
               <ListItem>Object Literal</ListItem>
             </Appear>
-            <Appear fid="23">
+            <Appear fid="22">
               <ListItem>Object Prototype</ListItem>
             </Appear>
-            <Appear fid="24">
+            <Appear fid="23">
               <ListItem>Object Constructor</ListItem>
             </Appear>
           </List>
@@ -474,13 +471,13 @@ export default class Presentation extends React.Component {
           ]} />
 
         <Slide transition={["slide"]} bgImage={images.global.nuclearExplosion.replace("/", "")} bgDarken={0.25}>
-          <Appear fid="25">
+          <Appear fid="24">
             <Heading size={1} fit lineHeight={1} textColor="primary">
               TypeError!
             </Heading>
           </Appear>
 
-          <Appear fid="26">
+          <Appear fid="25">
             <Image src={images.arrowFns.objectLiteralTypeError.replace("/", "")} margin="30px auto 0" height="300px"/>
           </Appear>
         </Slide>
@@ -591,7 +588,7 @@ export default class Presentation extends React.Component {
             Classes
           </Heading>
 
-          <Appear fid="27">
+          <Appear fid="26">
             <Text margin="30px 0 0" textColor="primary" size={1}>
               are a syntactic sugar over the prototype-based OO pattern. Having a single convenient declarative form
               makes class patterns easier to use, and encourages interoperability. Classes support prototype-based inheritance,
