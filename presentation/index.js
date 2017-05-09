@@ -37,6 +37,12 @@ const images = {
     explicitBlockedScopedError: require("../assets/img/let-and-const/block-scoped-let-error.png"),
     ifBlockScopedError: require("../assets/img/let-and-const/if-let-error.png"),
     constError: require("../assets/img/let-and-const/const-error.png")
+  },
+  arrowFns: {
+    trickQuestion1: require("../assets/img/arrow-functions-and-lexical-this/trick-question-1-result.png"),
+    objectLiteralTypeError: require("../assets/img/arrow-functions-and-lexical-this/object-literal-type-error.png"),
+    objectPrototypeError: require("../assets/img/arrow-functions-and-lexical-this/object-prototype-error.png"),
+    objectConstructorError: require("../assets/img/arrow-functions-and-lexical-this/object-constructor-error.png")
   }
 };
 
@@ -279,6 +285,268 @@ export default class Presentation extends React.Component {
           ]} />
 
         {/* [Enhanced Object Literals] ::end */}
+
+        {/* [Arrow Functions and Lexical this] ::start */}
+
+        <Slide transition={[]} bgColor="secondary" textColor="primary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
+            Arrow Functions and Lexical <Code textColor="primary" textSize="1rem">this</Code>
+          </Heading>
+
+          <Appear fid="21">
+            <Text margin="30px 0 0" textColor="primary" size={1}>
+              Arrows are a function shorthand using the <Code textColor="primary">=></Code> syntax.
+              They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript.
+              They support both expression and statement bodies. Unlike functions, arrows share the same lexical this as their surrounding code.
+            </Text>
+          </Appear>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/arrow-before-es2015.js.example")}
+          ranges={[
+            { loc: [0, 22], title: "Before ES2015" },
+            { loc: [0, 3], note: "Define variables" },
+            { loc: [4, 8], note: "Loop through the elements of array" },
+            { loc: [9, 21], note: "Show each elements of the array every 500ms" },
+            { loc: [11, 15], note: "Show the array element based on the value of the counter" },
+            { loc: [16, 20], note: "Clear the interval timer" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/arrow-es2015-beyond.js.example")}
+          ranges={[
+            { loc: [0, 22], title: "Arrow Functions" },
+            { loc: [0, 3], note: "Define variables" },
+            { loc: [4, 8], note: "Loop through the elements of array" },
+            { loc: [9, 21], note: "Show each elements of the array every 500ms" },
+            { loc: [11, 15], note: "Show the array element based on the value of the counter" },
+            { loc: [16, 20], note: "Clear the interval timer" }
+          ]} />
+
+        <Slide transition={["zoom"]} bgColor="tertiary">
+          <Text textColor="primary" size={6}>
+            There are various ways on how to write arrow functions: without parenthesis and one-liner.
+          </Text>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/without-parenthesis.js.example")}
+          ranges={[
+            { loc: [0, 23], title: "Without Parenthesis" },
+            { loc: [0, 2], note: "Define variables" },
+            { loc: [3, 7], note: "Get the squared value of each array element" },
+            { loc: [8, 17], note: "Perform map-reduce to get a single value" },
+            { loc: [11, 14], note: "Get the cubed value of each array element" },
+            { loc: [14, 17], note: "Get the sum of all the cubed values" },
+            { loc: [14, 17], note: "Without parethesis is on for functions with 1 parameter" },
+            { loc: [19, 22], note: "Show the output to the console" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/one-liner.js.example")}
+          ranges={[
+            { loc: [0, 17], title: "One Liner" },
+            { loc: [0, 2], note: "Define variables" },
+            { loc: [3, 5], note: "Get the squared value of each array element" },
+            { loc: [6, 11], note: "Perform map-reduce to get a single value" },
+            { loc: [9, 10], note: "Get the cubed value of each array element" },
+            { loc: [10, 11], note: "Get the sum of all the cubed values" },
+            { loc: [13, 16], note: "Show the output to the console" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/trick-question-1.js.example")}
+          ranges={[
+            { loc: [0, 40], title: "Before ES2015 - Lexical this" },
+            { loc: [0, 10], note: "Define a dog function constructor" },
+            { loc: [11, 17], note: "Define makeSound method that will be invoked every n seconds" },
+            { loc: [18, 22], note: "Define stopSound method that will stop the timer" },
+            { loc: [23, 26], note: "Add a utility method for initiating barking" },
+            { loc: [27, 30], note: "Add a utility method for stopping barking" },
+            { loc: [31, 34], note: "We create a dog instance and start barking immediately" },
+            { loc: [35, 39], note: "Stop the barking after 5s" },
+            { loc: [0, 40], title: "What's wrong in this code?" },
+            { loc: [14, 15], note: "this.animalSound is undefined" },
+            { loc: [14, 15], note: "Value of this is equal to window" },
+            { loc: [14, 15], note: "How to fix this?" }
+          ]} />
+
+        <Slide transition={["slide"]} bgImage={images.global.shocked1.replace("/", "")} bgDarken={0.25}>
+          <Heading size={1} fit lineHeight={1} textColor="primary">
+            Animal sound is undefined
+          </Heading>
+
+          <Image src={images.arrowFns.trickQuestion1.replace("/", "")} margin="30px auto 0" height="75px"/>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/lexical-this-before-es2015-1.js.example")}
+          ranges={[
+            { loc: [0, 42], title: "Before ES2015 - Fix 1" },
+            { loc: [0, 10], note: "Define a dog function constructor" },
+            { loc: [11, 19], note: "Define makeSound method that will be invoked every n seconds" },
+            { loc: [20, 24], note: "Define stopSound method that will stop the timer" },
+            { loc: [25, 28], note: "Add a utility method for initiating barking" },
+            { loc: [29, 32], note: "Add a utility method for stopping barking" },
+            { loc: [33, 36], note: "We create a dog instance and start barking immediately" },
+            { loc: [37, 41], note: "Stop the barking after 5s" },
+            { loc: [11, 19], note: "The fixed version" },
+            { loc: [12, 13], note: "Store the value of this to a variable" },
+            { loc: [16, 17], note: "Reference the animalSound property using the new variable" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/lexical-this-before-es2015-2.js.example")}
+          ranges={[
+            { loc: [0, 42], title: "Before ES2015 - Fix 2" },
+            { loc: [0, 10], note: "Define a dog function constructor" },
+            { loc: [11, 17], note: "Define makeSound method that will be invoked every n seconds" },
+            { loc: [18, 21], note: "Define stopSound method that will stop the timer" },
+            { loc: [22, 25], note: "Add a utility method for initiating barking" },
+            { loc: [26, 29], note: "Add a utility method for stopping barking" },
+            { loc: [30, 33], note: "We create a dog instance and start barking immediately" },
+            { loc: [34, 38], note: "Stop the barking after 5s" },
+            { loc: [11, 17], note: "The fixed version" },
+            { loc: [12, 13], note: "Create an anonymous fn and store it in a variable" },
+            { loc: [15, 16], note: "Modify the value of this using fn.bind and passing the actual this value" },
+            { loc: [11, 17], note: "The fixed version" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/lexical-this-es2015-beyond.js.example")}
+          ranges={[
+            { loc: [0, 40], title: "Lexical this on ES2015" },
+            { loc: [0, 10], note: "Define a dog function constructor" },
+            { loc: [11, 17], note: "Define makeSound method that will be invoked every n seconds" },
+            { loc: [18, 21], note: "Define stopSound method that will stop the timer" },
+            { loc: [22, 25], note: "Add a utility method for initiating barking" },
+            { loc: [26, 29], note: "Add a utility method for stopping barking" },
+            { loc: [30, 33], note: "We create a dog instance and start barking immediately" },
+            { loc: [34, 38], note: "Stop the barking after 5s" },
+            { loc: [11, 17], note: "The fixed version" },
+            { loc: [13, 16], note: "Simply replace the normal function with arrow function" }
+          ]} />
+
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>When not to use Arrow Functions?</Heading>
+
+          <List>
+            <Appear fid="22">
+              <ListItem>Object Literal</ListItem>
+            </Appear>
+            <Appear fid="23">
+              <ListItem>Object Prototype</ListItem>
+            </Appear>
+            <Appear fid="24">
+              <ListItem>Object Constructor</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/when-not-to-use-object-literal.js.example")}
+          ranges={[
+            { loc: [0, 12], title: "Arrow Fn on Object Literal" },
+            { loc: [2, 8], note: "Define an object" },
+            { loc: [3, 4], note: "With a numerical array property" },
+            { loc: [4, 7], note: "Computes the sum numerical array" },
+            { loc: [9, 11], note: "Call the sum method of the object" },
+            { loc: [0, 12], title: "What's the output?" }
+          ]} />
+
+        <Slide transition={["slide"]} bgImage={images.global.nuclearExplosion.replace("/", "")} bgDarken={0.25}>
+          <Appear fid="25">
+            <Heading size={1} fit lineHeight={1} textColor="primary">
+              TypeError!
+            </Heading>
+          </Appear>
+
+          <Appear fid="26">
+            <Image src={images.arrowFns.objectLiteralTypeError.replace("/", "")} margin="30px auto 0" height="300px"/>
+          </Appear>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/when-not-to-use-object-literal-fix.js.example")}
+          ranges={[
+            { loc: [0, 12], title: "Object Literal - Fixed" },
+            { loc: [2, 8], note: "Define an object" },
+            { loc: [3, 4], note: "With a numerical array property" },
+            { loc: [4, 7], note: "Computes the sum numerical array" },
+            { loc: [9, 11], note: "Call the sum method of the object" },
+            { loc: [4, 7], note: "Fixed by using the enhanced method syntax definition" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/when-not-to-use-object-prototype.js.example")}
+          ranges={[
+            { loc: [0, 40], title: "Arrow Fn - Object Prototype" },
+            { loc: [0, 10], note: "Define a dog function constructor" },
+            { loc: [11, 17], note: "Define makeSound method that will be invoked every n seconds" },
+            { loc: [18, 22], note: "Define stopSound method that will stop the timer" },
+            { loc: [23, 26], note: "Add a utility method for initiating barking" },
+            { loc: [27, 30], note: "Add a utility method for stopping barking" },
+            { loc: [31, 34], note: "We create a dog instance and start barking immediately" },
+            { loc: [35, 39], note: "Stop the barking after 5s" },
+            { loc: [0, 40], title: "What's the output?" }
+          ]} />
+
+        <Slide transition={["slide"]} bgImage={images.global.frustratedProgrammer.replace("/", "")} bgDarken={0.5}>
+          <Heading size={1} fit lineHeight={1} textColor="primary">
+            TypeError!
+          </Heading>
+
+          <Image src={images.arrowFns.objectPrototypeError.replace("/", "")} margin="30px auto 0" height="500px"/>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/when-not-to-use-object-constructor.js.example")}
+          ranges={[
+            { loc: [0, 40], title: "Arrow Fn - Object Constructor" },
+            { loc: [0, 10], note: "Define a dog function constructor" },
+            { loc: [11, 17], note: "Define makeSound method that will be invoked every n seconds" },
+            { loc: [18, 22], note: "Define stopSound method that will stop the timer" },
+            { loc: [23, 26], note: "Add a utility method for initiating barking" },
+            { loc: [27, 30], note: "Add a utility method for stopping barking" },
+            { loc: [31, 34], note: "We create a dog instance and start barking immediately" },
+            { loc: [35, 39], note: "Stop the barking after 5s" },
+            { loc: [0, 40], title: "What's the output?" }
+          ]} />
+
+        <Slide transition={["slide"]} bgImage={images.global.shocked1.replace("/", "")} bgDarken={0.5}>
+          <Heading size={1} fit lineHeight={1} textColor="primary">
+            TypeError!
+          </Heading>
+
+          <Image src={images.arrowFns.objectConstructorError.replace("/", "")} margin="30px auto 0" height="500px"/>
+        </Slide>
+
+        {/* [Arrow Functions and Lexical this] ::end */}
 
       </Deck>
     );

@@ -1,0 +1,39 @@
+function Dog(name, age) {
+  // set the properties
+  this.name = name;
+  this.age = age;
+
+  // define sound for animal
+  this.animalSound = "arf";
+  this.soundInterval = 1000;
+  this.soundTimer = null;
+}
+
+Dog.prototype.makeSound = function (soundInterval) {
+  // show the animal sound on the console every n seconds
+  this.soundTimer = setInterval(function () {
+    console.log(this.animalSound);
+  }, soundInterval);
+};
+
+Dog.prototype.stopSound = function () {
+  // stop the interval timer
+  clearInterval(this.soundTimer);
+};
+
+Dog.prototype.startBarking = function () {
+  this.makeSound(this.soundInterval);
+};
+
+Dog.prototype.stopBarking = function () {
+  this.stopSound();
+};
+
+// we create an instance of dog and immediately start barking
+var rocky = new Dog("rocky", 7);
+rocky.startBarking();
+
+// stop rocky's barkin after 5s
+setTimeout(function () {
+  rocky.stopBarking();
+}, 5000);

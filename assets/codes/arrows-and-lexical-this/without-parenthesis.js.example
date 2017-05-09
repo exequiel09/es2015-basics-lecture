@@ -1,0 +1,22 @@
+// define variables
+const num_array = [1, 2, 3, 4, 5];
+
+// get the squared of each array element
+const squared = num_array.map(num => {
+    return num * num;
+});
+
+// perform map-reduce to get first the cubed numbers of each array and
+// get the sum of all cubed numbers
+const cubedAndSummed = num_array
+  .map(num => {
+    return num * num * num;
+  })
+  .reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  }, 0)
+  ;
+
+// log the results to the console
+console.log(squared);
+console.log(cubedAndSummed);
