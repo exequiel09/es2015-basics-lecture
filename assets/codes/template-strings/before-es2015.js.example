@@ -1,0 +1,19 @@
+// define object of person with its information
+var person = {
+    name: 'Bob',
+    address: 'Laguna, Philippines',
+
+    // concatenate the string and return it
+    getInfo: function() {
+        return 'Name: ' + this.name + ' Address: ' + this.address;
+    },
+
+    // concatenate the string and add some newlines in between and return it
+    getInfoFormated: function() {
+      return "Name: " + this.name + "\nAddress: " + this.address;
+    }
+};
+
+// show the returned value
+console.log(person.getInfo());
+console.log(person.getInfoFormated());

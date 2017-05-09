@@ -548,6 +548,42 @@ export default class Presentation extends React.Component {
 
         {/* [Arrow Functions and Lexical this] ::end */}
 
+        {/* [Template Strings] ::start */}
+
+        <Slide transition={[]} bgColor="secondary" textColor="primary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
+            Template Strings
+          </Heading>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/template-strings/before-es2015.js.example")}
+          ranges={[
+            { loc: [0, 20], title: "Before ES 2015" },
+            { loc: [0, 15], note: "Define a person object with some information" },
+            { loc: [2, 4], note: "Define object properties" },
+            { loc: [5, 9], note: "Return the information of the user using concatenation" },
+            { loc: [10, 14], note: "Return the information of the user using concatenation and adding some formatting" },
+            { loc: [16, 19], note: "Show the output to the console" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/template-strings/es2015-beyond.js.example")}
+          ranges={[
+            { loc: [0, 21], title: "ES 2015 Template Strings" },
+            { loc: [0, 16], note: "Define a person object with some information" },
+            { loc: [2, 4], note: "Define object properties" },
+            { loc: [5, 9], note: "Return the user info using template strings" },
+            { loc: [10, 16], note: "Return the user info using template strings with some formatting" },
+            { loc: [17, 20], note: "Show the output to the console" }
+          ]} />
+
+        {/* [Template Strings] ::end */}
+
       </Deck>
     );
   }

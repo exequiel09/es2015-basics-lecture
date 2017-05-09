@@ -1,0 +1,20 @@
+// define object of person with its information
+const person = {
+  name: 'Bob',
+  address: 'Laguna, Philippines',
+
+  // concatenate the string and return it
+  getInfo() {
+    return `Name: ${this.name} Address: ${this.address}`;
+  },
+
+  // concatenate the string and add some newlines in between and return it
+  getInfoFormated() {
+    return `Name: ${this.name}
+Address: ${this.address}`;
+  }
+};
+
+// show the returned value
+console.log(person.getInfo());
+console.log(person.getInfoFormated());
