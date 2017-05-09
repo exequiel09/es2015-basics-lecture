@@ -1,0 +1,14 @@
+function copyArray(arr) {
+  // copy the entire array
+  return arr.slice();
+}
+
+var first = [1, 2, 3];
+var second = copyArray(first);
+
+// add a new element to the arrau
+second.push(5);
+
+// show the output
+console.log(first);
+console.log(second);

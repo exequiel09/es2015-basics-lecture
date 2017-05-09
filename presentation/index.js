@@ -683,6 +683,94 @@ export default class Presentation extends React.Component {
 
         {/* [Destructuring] ::end */}
 
+        {/* [Default, Rest and Spread] ::start */}
+
+        <Slide transition={[]} bgColor="secondary" textColor="primary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
+            Default, Rest and Spread
+          </Heading>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/default-rest-spread/default-before-es2015.js.example")}
+          ranges={[
+            { loc: [0, 25], title: "Before ES2015" },
+            { loc: [0, 12], note: "Fetch list of user's repo in GitHub" },
+            { loc: [3, 7], note: "Access the arguments object to get any other arguments passed to the function" },
+            { loc: [10, 11], note: "Perform HTTP request to GitHub API using fetch" },
+            { loc: [13, 15], note: "Execute the function" },
+            { loc: [15, 19], note: "Process the promise chain" },
+            { loc: [19, 23] }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/default-rest-spread/default-es2015-beyond.js.example")}
+          ranges={[
+            { loc: [0, 19], title: "ES2015 Default fn params" },
+            { loc: [0, 6], note: "Define a function fetching list of user's repo in GitHub" },
+            { loc: [1, 2], note: "Define a second optional parameter by adding a default value too it" },
+            { loc: [4, 5], note: "Perform HTTP request to GitHub API using fetch" },
+            { loc: [8, 9], note: "Execute the function" },
+            { loc: [9, 13], note: "Process the promise chain" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/default-rest-spread/spread-before-es2015.js.example")}
+          ranges={[
+            { loc: [0, 15], title: "Before ES2015 - Spread" },
+            { loc: [0, 4], note: "Define a function to copy array using slice" },
+            { loc: [5, 6], note: "Define a numerical array" },
+            { loc: [6, 7], note: "Copy the array using the copyArray fn" },
+            { loc: [8, 10], note: "Add new item to the second array" },
+            { loc: [11, 14], note: "Show the output" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/default-rest-spread/spread-es2015-beyond.js.example")}
+          ranges={[
+            { loc: [0, 15], title: "ES2015 - Spread" },
+            { loc: [0, 4], note: "Define a function to copy array using spread" },
+            { loc: [5, 6], note: "Define a numerical array" },
+            { loc: [6, 7], note: "Copy the array using the copyArray fn" },
+            { loc: [8, 10], note: "Add new item to the second array" },
+            { loc: [11, 14], note: "Show the output" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/default-rest-spread/rest-before-es2015.js.example")}
+          ranges={[
+            { loc: [0, 16], title: "Before ES2015 - Rest" },
+            { loc: [0, 9], note: "Define a function that concatenate an array of strings" },
+            { loc: [2, 5], note: "Access arguments object and convert to array" },
+            { loc: [6, 8], note: "Concatenate the converted arguments object" },
+            { loc: [10, 12], note: "Call the concat function" },
+            { loc: [13, 15], note: "Show the output" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/default-rest-spread/rest-es2015-beyond.js.example")}
+          ranges={[
+            { loc: [0, 12], title: "ES2015 Rest" },
+            { loc: [0, 5], note: "Define a function that concatenate an array of strings" },
+            { loc: [1, 2], note: "Apply spread operator to the function parameter" },
+            { loc: [6, 8], note: "Call the concat function" },
+            { loc: [9, 11], note: "Show the output" }
+          ]} />
+
+        {/* [Default, Rest and Spread] ::end */}
+
       </Deck>
     );
   }

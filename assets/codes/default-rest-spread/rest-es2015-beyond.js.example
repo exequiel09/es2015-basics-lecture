@@ -1,0 +1,11 @@
+// define function that will accept n arguments
+function concat(...words) {
+  // concatenate the string
+  return words.join(' ');
+}
+
+// concatenate the string using the function above
+const concatenatedString = concat('this', 'is', 'okay');
+
+// show the output
+console.log(concatenatedString);

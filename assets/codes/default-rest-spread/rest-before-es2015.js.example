@@ -1,0 +1,15 @@
+// define function that will accept n arguments
+function concat() {
+  // arguments is an array like object but not an array
+  // convert it first to real array
+  var args = Array.prototype.slice.call(arguments);
+
+  // concatenate the string
+  return args.join(' ');
+}
+
+// concatenate the string using the function above
+var concatenatedString = concat('this', 'is', 'okay');
+
+// show the output
+console.log(concatenatedString);
