@@ -647,6 +647,42 @@ export default class Presentation extends React.Component {
 
         {/* [Classes] ::end */}
 
+        {/* [Destructuring] ::start */}
+
+        <Slide transition={[]} bgColor="secondary" textColor="primary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
+            Destructuring
+          </Heading>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/destructuring/before-es2015.js.example")}
+          ranges={[
+            { loc: [0, 25], title: "Before ES2015" },
+            { loc: [0, 2], note: "Define a numerical array" },
+            { loc: [3, 8], note: "Assign each items of the array to a variable" },
+            { loc: [9, 14], note: "Show the output" },
+            { loc: [15, 20], note: "Define an object" },
+            { loc: [21, 24], note: "Assign each properties of the object to a variable" },
+            { loc: [25, 28], note: "Show the output" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/destructuring/es2015-beyond.js.example")}
+          ranges={[
+            { loc: [0, 19], title: "ES2015 Destructuring" },
+            { loc: [0, 2], note: "Define a numerical array and destructure it" },
+            { loc: [3, 8], note: "Show the output" },
+            { loc: [9, 14], note: "Define an object and destructure it" },
+            { loc: [15, 18], note: "Show the output" }
+          ]} />
+
+        {/* [Destructuring] ::end */}
+
       </Deck>
     );
   }
