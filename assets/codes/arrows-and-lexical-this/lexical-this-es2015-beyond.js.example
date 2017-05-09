@@ -29,7 +29,7 @@ Dog.prototype.stopBarking = function () {
 };
 
 // we create an instance of dog and immediately start barking
-var rocky = new Dog("rocky", 7);
+const rocky = new Dog("rocky", 7);
 rocky.startBarking();
 
 // stop rocky's barkin after 5s
