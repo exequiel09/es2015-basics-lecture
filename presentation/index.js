@@ -584,6 +584,69 @@ export default class Presentation extends React.Component {
 
         {/* [Template Strings] ::end */}
 
+        {/* [Classes] ::start */}
+
+        <Slide transition={[]} bgColor="secondary" textColor="primary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
+            Classes
+          </Heading>
+
+          <Appear fid="27">
+            <Text margin="30px 0 0" textColor="primary" size={1}>
+              are a syntactic sugar over the prototype-based OO pattern. Having a single convenient declarative form
+              makes class patterns easier to use, and encourages interoperability. Classes support prototype-based inheritance,
+              super calls, instance and static methods and constructors.
+            </Text>
+          </Appear>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/classes/before-es2015.js.example")}
+          ranges={[
+            { loc: [0, 60], title: "Before ES 2015" },
+            { loc: [0, 8], note: "Define an Animal constructor as the base prototype" },
+            { loc: [9, 13], note: "Animal prototype functions" },
+            { loc: [14, 17] },
+            { loc: [18, 24] },
+            { loc: [25, 28] },
+            { loc: [29, 38], note: "Define a Dog constructor" },
+            { loc: [31, 33], note: "Call the parent constructor" },
+            { loc: [34, 37], note: "Add new properties" },
+            { loc: [34, 37], note: "Add new properties" },
+            { loc: [39, 41], note: "Inherit all methods/function defined in the Animal's prototype" },
+            { loc: [42, 46], note: "Define Dog specific prototype functions" },
+            { loc: [47, 50] },
+            { loc: [51, 54], note: "We create a dog instance and start barking immediately" },
+            { loc: [55, 59], note: "Stop the barking after 5s" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/classes/es2015-beyond.js.example")}
+          ranges={[
+            { loc: [0, 60], title: "ES 2015 Classes" },
+            { loc: [0, 2], note: "Define an Animal class" },
+            { loc: [2, 9], note: "Define object properties inside the constructor" },
+            { loc: [10, 13], note: "Add methods to the Animal class" },
+            { loc: [14, 17] },
+            { loc: [14, 17] },
+            { loc: [18, 24] },
+            { loc: [25, 28] },
+            { loc: [31, 32], note: "Define a Dog class extending the Animal class" },
+            { loc: [32, 40], note: "Add a constructor function" },
+            { loc: [33, 35], note: "Call the parent constructor" },
+            { loc: [36, 39], note: "Override the properties" },
+            { loc: [41, 44], note: "Add methods to the Dog class" },
+            { loc: [45, 48] },
+            { loc: [50, 53], note: "We create a dog instance and start barking immediately" },
+            { loc: [54, 58], note: "Stop the barking after 5s" }
+          ]} />
+
+        {/* [Classes] ::end */}
+
       </Deck>
     );
   }
