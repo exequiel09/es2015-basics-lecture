@@ -39,7 +39,10 @@ const images = {
     constError: require("../assets/img/let-and-const/const-error.png")
   },
   arrowFns: {
-    trickQuestion1: require("../assets/img/arrow-functions-and-lexical-this/trick-question-1-result.png")
+    trickQuestion1: require("../assets/img/arrow-functions-and-lexical-this/trick-question-1-result.png"),
+    objectLiteralTypeError: require("../assets/img/arrow-functions-and-lexical-this/object-literal-type-error.png"),
+    objectPrototypeError: require("../assets/img/arrow-functions-and-lexical-this/object-prototype-error.png"),
+    objectConstructorError: require("../assets/img/arrow-functions-and-lexical-this/object-constructor-error.png")
   }
 };
 
@@ -440,6 +443,108 @@ export default class Presentation extends React.Component {
             { loc: [11, 17], note: "The fixed version" },
             { loc: [13, 16], note: "Simply replace the normal function with arrow function" }
           ]} />
+
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>When not to use Arrow Functions?</Heading>
+
+          <List>
+            <Appear fid="22">
+              <ListItem>Object Literal</ListItem>
+            </Appear>
+            <Appear fid="23">
+              <ListItem>Object Prototype</ListItem>
+            </Appear>
+            <Appear fid="24">
+              <ListItem>Object Constructor</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/when-not-to-use-object-literal.js.example")}
+          ranges={[
+            { loc: [0, 12], title: "Arrow Fn on Object Literal" },
+            { loc: [2, 8], note: "Define an object" },
+            { loc: [3, 4], note: "With a numerical array property" },
+            { loc: [4, 7], note: "Computes the sum numerical array" },
+            { loc: [9, 11], note: "Call the sum method of the object" },
+            { loc: [0, 12], title: "What's the output?" }
+          ]} />
+
+        <Slide transition={["slide"]} bgImage={images.global.nuclearExplosion.replace("/", "")} bgDarken={0.25}>
+          <Appear fid="25">
+            <Heading size={1} fit lineHeight={1} textColor="primary">
+              TypeError!
+            </Heading>
+          </Appear>
+
+          <Appear fid="26">
+            <Image src={images.arrowFns.objectLiteralTypeError.replace("/", "")} margin="30px auto 0" height="300px"/>
+          </Appear>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/when-not-to-use-object-literal-fix.js.example")}
+          ranges={[
+            { loc: [0, 12], title: "Object Literal - Fixed" },
+            { loc: [2, 8], note: "Define an object" },
+            { loc: [3, 4], note: "With a numerical array property" },
+            { loc: [4, 7], note: "Computes the sum numerical array" },
+            { loc: [9, 11], note: "Call the sum method of the object" },
+            { loc: [4, 7], note: "Fixed by using the enhanced method syntax definition" }
+          ]} />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/when-not-to-use-object-prototype.js.example")}
+          ranges={[
+            { loc: [0, 40], title: "Arrow Fn - Object Prototype" },
+            { loc: [0, 10], note: "Define a dog function constructor" },
+            { loc: [11, 17], note: "Define makeSound method that will be invoked every n seconds" },
+            { loc: [18, 22], note: "Define stopSound method that will stop the timer" },
+            { loc: [23, 26], note: "Add a utility method for initiating barking" },
+            { loc: [27, 30], note: "Add a utility method for stopping barking" },
+            { loc: [31, 34], note: "We create a dog instance and start barking immediately" },
+            { loc: [35, 39], note: "Stop the barking after 5s" },
+            { loc: [0, 40], title: "What's the output?" }
+          ]} />
+
+        <Slide transition={["slide"]} bgImage={images.global.frustratedProgrammer.replace("/", "")} bgDarken={0.5}>
+          <Heading size={1} fit lineHeight={1} textColor="primary">
+            TypeError!
+          </Heading>
+
+          <Image src={images.arrowFns.objectPrototypeError.replace("/", "")} margin="30px auto 0" height="500px"/>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/codes/arrows-and-lexical-this/when-not-to-use-object-constructor.js.example")}
+          ranges={[
+            { loc: [0, 40], title: "Arrow Fn - Object Constructor" },
+            { loc: [0, 10], note: "Define a dog function constructor" },
+            { loc: [11, 17], note: "Define makeSound method that will be invoked every n seconds" },
+            { loc: [18, 22], note: "Define stopSound method that will stop the timer" },
+            { loc: [23, 26], note: "Add a utility method for initiating barking" },
+            { loc: [27, 30], note: "Add a utility method for stopping barking" },
+            { loc: [31, 34], note: "We create a dog instance and start barking immediately" },
+            { loc: [35, 39], note: "Stop the barking after 5s" },
+            { loc: [0, 40], title: "What's the output?" }
+          ]} />
+
+        <Slide transition={["slide"]} bgImage={images.global.shocked1.replace("/", "")} bgDarken={0.5}>
+          <Heading size={1} fit lineHeight={1} textColor="primary">
+            TypeError!
+          </Heading>
+
+          <Image src={images.arrowFns.objectConstructorError.replace("/", "")} margin="30px auto 0" height="500px"/>
+        </Slide>
 
         {/* [Arrow Functions and Lexical this] ::end */}
 

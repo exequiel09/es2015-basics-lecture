@@ -1,0 +1,11 @@
+// define calculate object which computes the sum of the items property
+// when calling sum object method
+const calculate = {
+    items: [1, 2, 3],
+    sum: () => {
+        return this.items.reduce((result, item) => result + item);
+    }
+};
+
+// compute the sum of the items property of the object
+console.log(calculate.sum());
