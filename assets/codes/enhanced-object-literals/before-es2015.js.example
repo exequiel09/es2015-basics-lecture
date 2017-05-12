@@ -1,9 +1,9 @@
 // declare variables using const
-const name = 'John Doe';
-const suffix_token = 'id123344';
+var name = 'John Doe';
+var suffix_token = 'id123344';
 
 // define object using object literal `{}` with properties and a method
-const obj = {
+var obj = {
   name: name,
   address: 'Los Baños, Laguna',
   showInfo: function() {
