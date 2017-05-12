@@ -1,6 +1,6 @@
 {
-  "name": "spectacle-boilerplate",
-  "version": "1.0.1",
+  "name": "es2015-basics-lecture",
+  "version": "1.0.0",
   "description": "ReactJS Powered Presentation Framework",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "deploy": "npm run clean & npm run build && surge -p .",
     "start": "cross-env NODE_ENV=development node server.js"
   },
-  "author": "",
+  "author": "Exequiel Ceasar Navarrete <exequiel.navarrete09@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "normalize.css": "3.0.3",
