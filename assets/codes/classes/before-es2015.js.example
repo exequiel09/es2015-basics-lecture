@@ -1,0 +1,59 @@
+// Create Animal function constructor
+function Animal(name, age) {
+  // define properties for Animal
+  this.name = name;
+  this.age = age;
+  this.animalSound = "unknown";
+  this.soundTimer = null;
+}
+
+// Animal function prototypes
+Animal.prototype.getName = function() {
+  return this.name;
+};
+
+Animal.prototype.getAge = function() {
+  return this.age;
+};
+
+Animal.prototype.makeSound = function (soundInterval) {
+  var intervalFn = function () { console.log(this.animalSound); };
+
+  // show the animal sound on the console every n seconds
+  this.soundTimer = setInterval(intervalFn.bind(this), soundInterval);
+};
+
+Animal.prototype.stopSound = function () {
+  clearInterval(this.soundTimer);
+};
+
+// Create child constructor function
+function Dog(name, age) {
+  // call the parent function constructor
+  Animal.call(this, name, age);
+
+  // define properties for Dog
+  this.animalSound = "arf";
+  this.soundInterval = 1000;
+}
+
+// inherit all Animal's prototype functions and assign it into the Dog function/class
+Dog.prototype = Object.create(Animal.prototype);
+
+// define Dog specific prototype functions
+Dog.prototype.startBarking = function () {
+  this.makeSound(this.soundInterval);
+};
+
+Dog.prototype.stopBarking = function () {
+  this.stopSound();
+};
+
+// we create an instance of dog and immediately start barking
+var rocky = new Dog("rocky", 7);
+rocky.startBarking();
+
+// stop rocky's barking after 5s
+setTimeout(function () {
+  rocky.stopBarking();
+}, 5000);

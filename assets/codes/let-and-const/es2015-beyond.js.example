@@ -1,0 +1,15 @@
+// define variables
+let num = 10; //number
+const keyword = "i-am-a-keyword";
+
+function showNumber() {
+  const another_number = 20;
+  console.log(another_number);
+}
+
+// we log it here.
+console.log(num);
+console.log(keyword);
+
+// call the function
+showNumber();

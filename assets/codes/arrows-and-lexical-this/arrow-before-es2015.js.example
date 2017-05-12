@@ -1,0 +1,21 @@
+// define variables
+var num_array = [1, 2, 3, 4, 5];
+var show_counter = 0;
+
+// show the numbers in the console
+num_array.forEach(function(num) {
+  console.log(num);
+});
+
+// show the numbers in the console every 500ms
+var timerId = setInterval(function() {
+  console.log(num_array[show_counter]);
+
+  // increment the counter to show the next item in the array
+  show_counter++;
+
+  // clear the timer when it reaches the end of array
+  if (show_counter > (num_array.length - 1)) {
+    clearInterval(timerId);
+  }
+}, 500);

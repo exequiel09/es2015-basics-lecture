@@ -1,0 +1,24 @@
+// define a function with one default parameters
+function getGithubUserRepos(username) {
+  var repoType = "all";
+
+  if (arguments.length > 1 && typeof arguments[1] !== 'undefined') {
+    repoType = arguments[1];
+  }
+
+  var endpoint = "https://api.github.com/users/" + username + "/repos?type=" + repoType;
+
+  return fetch(endpoint);
+}
+
+// call the function with just one argument
+getGithubUserRepos('ecsnavarretemit')
+  .then(function(response) {
+    // get the json sent by the API
+    return response.json();
+  })
+  .then(function(repos) {
+    // show the result of the query
+    console.log(repos);
+  })
+  ;

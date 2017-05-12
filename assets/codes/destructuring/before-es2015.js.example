@@ -1,0 +1,28 @@
+// extract array items into variables
+var num_array = [1, 2, 3, 4];
+
+// extract values one-by-one
+var one = num_array[0];
+var two = num_array[1];
+var three = num_array[2];
+var four = num_array[3];
+
+// show the output
+console.log(one);
+console.log(two);
+console.log(three);
+console.log(four);
+
+// define temporary object for destructuring
+var obj = {
+  foo: 'lorem',
+  bar: 'ipsum'
+};
+
+// extract foo and bar property into variables named foo and bar
+var foo = obj.foo;
+var bar = obj.bar;
+
+// show the output
+console.log(foo);
+console.log(bar);

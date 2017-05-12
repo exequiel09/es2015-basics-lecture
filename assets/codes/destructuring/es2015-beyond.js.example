@@ -1,0 +1,18 @@
+// extract array items into variables
+const [one, two, three, four] = [1, 2, 3, 4];
+
+// show the output
+console.log(one);
+console.log(two);
+console.log(three);
+console.log(four);
+
+// extract foo and bar property into variables named foo and bar
+const { foo, bar } = {
+  foo: 'lorem',
+  bar: 'ipsum'
+};
+
+// show the output
+console.log(foo);
+console.log(bar);

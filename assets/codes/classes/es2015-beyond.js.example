@@ -1,0 +1,58 @@
+// create base class for animals
+class Animal {
+  constructor(name, age) {
+    // define class properties
+    this.name = name;
+    this.age = age;
+    this.animalSound = "unknown";
+    this.soundTimer = null;
+  }
+
+  getName() {
+    return this.name;
+  }
+
+  getAge() {
+    return this.age;
+  }
+
+  makeSound(soundInterval) {
+    // show the animal sound on the console every n seconds
+    this.soundTimer = setInterval(() => {
+      console.log(this.animalSound)
+    }, soundInterval);
+  }
+
+  stopSound() {
+    clearInterval(this.soundTimer);
+  }
+}
+
+// create a dog class that extends the base class animal
+class Dog extends Animal {
+  constructor(name, age) {
+    // call the parent constructor
+    super(name, age);
+
+    // define sound for dog
+    this.animalSound = "arf";
+    this.soundInterval = 1000;
+  }
+
+  startBarking() {
+    this.makeSound(this.soundInterval);
+  }
+
+  stopBarking() {
+    this.stopSound();
+  }
+}
+
+// we create an instance of dog and immediately start barking
+var rocky = new Dog("rocky", 7);
+rocky.startBarking();
+
+// stop rocky's barking after 5s
+setTimeout(() => {
+  rocky.stopBarking();
+}, 5000);

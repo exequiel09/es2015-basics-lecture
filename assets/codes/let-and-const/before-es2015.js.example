@@ -1,0 +1,7 @@
+// define variables
+var num = 10; //number
+var str = "The quick brown fox jumps over the lazy dog";
+
+// we log it here.
+console.log(num);
+console.log(str);

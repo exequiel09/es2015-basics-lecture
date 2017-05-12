@@ -1,0 +1,14 @@
+// define function with 2 parameters which one of this has a default value
+function getGithubUserRepos(username, repoType="all") {
+  const endpoint = `https://api.github.com/users/${username}/repos?type=${repoType}`;
+
+  return fetch(endpoint);
+}
+
+// call the function with just one argument
+getGithubUserRepos('ecsnavarretemit')
+   // get the json sent by the API
+  .then(response => response.json())
+   // show the result of the query
+  .then(repos => console.log(repos))
+  ;
