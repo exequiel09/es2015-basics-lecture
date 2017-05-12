@@ -166,6 +166,19 @@ export default class Presentation extends React.Component {
             { loc: [9, 15], note: "Show the output in the console" }
           ]} />
 
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          textAlign="left"
+          display="block"
+          code={require("raw-loader!../assets/codes/let-and-const/trick-question-1.js.example")}
+          ranges={[
+            { loc: [0, 8], title: "let and const" },
+            { loc: [0, 4], note: "Define variable inside a block scope" },
+            { loc: [5, 7], note: "Show the output in the console" },
+            { loc: [0, 8], title: "What's the output?" }
+          ]} />
+
         <Slide transition={["slide"]} bgImage={images.global.nuclearExplosion.replace("/", "")} bgDarken={0.25}>
           <Appear fid="12">
             <Heading size={1} fit lineHeight={1} textColor="primary">
